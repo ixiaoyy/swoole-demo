@@ -25,12 +25,11 @@ return [
     ],
     'sockets'                  => [],
     'processes'                => [
-        //[
-        //    'class'    => \App\Processes\TestProcess::class,
-        //    'redirect' => false, // Whether redirect stdin/stdout, true or false
-        //    'pipe'     => 0 // The type of pipeline, 0: no pipeline 1: SOCK_STREAM 2: SOCK_DGRAM
-        //    'enable'   => true // Whether to enable, default true
-        //],
+        [
+            'class'    => \App\Processes\TestProcess::class,
+            'redirect' => false, // Whether redirect stdin/stdout, true or false
+            'pipe'     => 0 // The type of pipeline, 0: no pipeline 1: SOCK_STREAM 2: SOCK_DGRAM
+        ],
     ],
     'timer'  => [
         'enable' => true,
@@ -75,7 +74,7 @@ return [
         'reload_async'       => true,
         'max_wait_time'      => 60,
         'enable_reuse_port'  => true,
-        'enable_coroutine'   => false,
+        'enable_coroutine'   => true,
         'http_compression'   => false,
 
         // Slow log
