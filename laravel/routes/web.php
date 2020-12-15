@@ -18,14 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/task/test', function () {
-//    $task = new \App\Jobs\TestTask('测试异步任务');
-//    $success = \Hhxsv5\LaravelS\Swoole\Task\Task::deliver($task);  // 异步投递任务，触发调用任务类的 handle 方法
-//    var_dump($success);
-    var_dump('1');
-    return view('danmu');
+    $task = new \App\Jobs\TestTask('测试异步任务');
+    $success = \Hhxsv5\LaravelS\Swoole\Task\Task::deliver($task);  // 异步投递任务，触发调用任务类的 handle 方法
+    var_dump($success);
 });
 
 Route::get('/danmu', function() {
-    var_dump('1');
     return view('danmu');
 });
