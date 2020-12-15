@@ -23,6 +23,6 @@ Route::get('/task/test', function () {
     var_dump($success);
 });
 
-Route::get('/danmu', function() {
+Route::get('/danmu/test', function() {
     return view('danmu');
 });
