@@ -24,5 +24,6 @@ Route::get('/task/test', function () {
 });
 
 Route::get('/danmu', function() {
+    var_dump('1');
     return view('danmu');
 });
