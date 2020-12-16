@@ -26,3 +26,7 @@ Route::get('/task/test', function () {
 Route::get('/danmu', function() {
     return view('danmu');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
