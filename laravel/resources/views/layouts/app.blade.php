@@ -81,4 +81,5 @@
     </div>
 </body>
 <script src="{{ mix('js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </html>
