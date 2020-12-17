@@ -75,11 +75,9 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main id="app" class="py-4">
             @yield('content')
         </main>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="{{ mix('js/app.js') }}"></script>
 </html>
