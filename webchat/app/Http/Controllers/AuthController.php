@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +13,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         // 验证注册字段
-        Validator:;make($request->all(), [
+        Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6']
@@ -40,11 +39,11 @@ class AuthController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         $user = User::where('email', $email)->first();
-        // 用户检验成功则返回 Token 信息
+        // 用户校验成功则返回 Token 信息
         if ($user && Hash::check($password, $user->password)) {
             return response()->json(['user' => $user, 'success' => true]);
         }
 
-        return response()->json(['success' => false]);
+        return  response()->json(['success' => false]);
     }
 }
