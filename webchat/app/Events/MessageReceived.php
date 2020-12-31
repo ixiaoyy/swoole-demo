@@ -1,20 +1,17 @@
 <?php
-
 namespace App\Events;
 
-use App\Models\Message;
+use App\Message;
 use Carbon\Carbon;
 use Hhxsv5\LaravelS\Swoole\Task\Event;
 
-class MessageReceived
+class MessageReceived extends Event
 {
     private $message;
     private $userId;
 
     /**
      * Create a new event instance.
-     *
-     * @return void
      */
     public function __construct($message, $userId = 0)
     {
@@ -22,9 +19,9 @@ class MessageReceived
         $this->userId = $userId;
     }
 
-    /*
+    /**
      * Get the message data
-     *
+     * 
      * return App\Message
      */
     public function getData()
